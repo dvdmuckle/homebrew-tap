@@ -32,7 +32,7 @@ echo "Fetching macOS sha256"
 MAC_SHA=$(curl -sLS "${MAC_TAR_URL}" | shasum -a 256 | cut -f1 -d\ "")
 
 cat > Formula/spc.rb <<FORMULA
-class dvdmuckle < Formula
+class Spc < Formula
   version "v${VERSION}"
   desc "A spotify daemon"
   homepage "https://github.com/dvdmuckle/spc"

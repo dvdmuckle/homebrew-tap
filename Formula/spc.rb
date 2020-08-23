@@ -1,4 +1,4 @@
-class dvdmuckle < Formula
+class Spc < Formula
   version "v0.5"
   desc "A spotify daemon"
   homepage "https://github.com/dvdmuckle/spc"
