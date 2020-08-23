@@ -16,7 +16,7 @@ CURL=`which curl`
 
 # Check if macOS release exists, if it does then it is likely that the Linux one does too
 MAC_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/v${VERSION}/spc_v${VERSION}_darwin_amd64.tar.gz"
-LINUX_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/v${VERSION}/spc-v${VERSION}_linux_amd64.tar.gz"
+LINUX_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/v${VERSION}/spc_v${VERSION}_linux_amd64.tar.gz"
 
 CHECKVER_CODE=`curl -X HEAD -m 3 -sfw "%{response_code}" ${MAC_TAR_URL}`
 if [ $CHECKVER_CODE -ne 302 ]; then
@@ -40,10 +40,10 @@ class Spc < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dvdmuckle/spc/releases/download/v#{version}/spc_v#{version}_darwin_amd64.tar.gz"
+    url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc_#{version}_darwin_amd64.tar.gz"
     sha256 "${MAC_SHA}"
   elsif OS.linux?
-    url "https://github.com/dvdmuckle/spc/releases/download/v#{version}/spc_v#{version}_linux_amd64.tar.gz"
+    url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc_#{version}_linux_amd64.tar.gz"
     sha256 "${LINUX_SHA}"
 end
 
