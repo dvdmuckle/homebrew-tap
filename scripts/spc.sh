@@ -49,6 +49,13 @@ end
 
   def install
     bin.install "spc"
+
+    output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"spc", "completion", "bash")
+    (bash_completion/"spc").write output
+
+    output = Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"spc", "completion", "zsh")
+    (zsh_completion/"_spc").write output
+
 end
 
 end
