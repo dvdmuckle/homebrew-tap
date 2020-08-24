@@ -34,7 +34,7 @@ MAC_SHA=$(curl -sLS "${MAC_TAR_URL}" | shasum -a 256 | cut -f1 -d\ "")
 cat > Formula/spc.rb <<FORMULA
 class Spc < Formula
   version "v${VERSION}"
-  desc "A spotify daemon"
+  desc "A spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
 
   bottle :unneeded

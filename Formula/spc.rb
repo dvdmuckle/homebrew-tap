@@ -1,16 +1,16 @@
 class Spc < Formula
-  version "v0.5"
-  desc "A spotify daemon"
+  version "v0.5.1"
+  desc "A spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
 
   bottle :unneeded
 
   if OS.mac?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc_#{version}_darwin_amd64.tar.gz"
-    sha256 "a859e8e105bf47b1b9e8157aaef25887dc9c0b8ac77c3128a05020e9f7f45f96"
+    sha256 "4ee81bb82823896fdbdf64903cd5f8b1100373846ee36c389774e321af42d822"
   elsif OS.linux?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc_#{version}_linux_amd64.tar.gz"
-    sha256 "ba5ef9665d22264f4a02cef50f20c69170419454dbd0a6e3080312f0d92b44bc"
+    sha256 "aca8f564ae112b827964420403b2455af516e8951a09427ff39cffaefb198d9f"
 end
 
   def install
