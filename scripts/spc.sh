@@ -15,8 +15,8 @@ CURL=`which curl`
 [ -n ${SHASUM} ] && [ -n ${CURL} ] || exit 2
 
 # Check if macOS release exists, if it does then it is likely that the Linux one does too
-MAC_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/v${VERSION}/spc_v${VERSION}_darwin_amd64.tar.gz"
-LINUX_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/v${VERSION}/spc_v${VERSION}_linux_amd64.tar.gz"
+MAC_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/${VERSION}/spc_${VERSION}_darwin_amd64.tar.gz"
+LINUX_TAR_URL="https://github.com/dvdmuckle/spc/releases/download/${VERSION}/spc_${VERSION}_linux_amd64.tar.gz"
 
 CHECKVER_CODE=`curl -X HEAD -m 3 -sfw "%{response_code}" ${MAC_TAR_URL}`
 if [ $CHECKVER_CODE -ne 302 ]; then
@@ -33,7 +33,7 @@ MAC_SHA=$(curl -sLS "${MAC_TAR_URL}" | shasum -a 256 | cut -f1 -d\ "")
 
 cat > Formula/spc.rb <<FORMULA
 class Spc < Formula
-  version "v${VERSION}"
+  version "${VERSION}"
   desc "A spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
 
