@@ -7,10 +7,10 @@ class Spc < Formula
 
   if OS.mac?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc_#{version}_darwin_amd64.tar.gz"
-    sha256 "d6564c6e1753db60fdb9743b6aae4481e814f95ae2b8f2fde2a838630e6a96e7"
+    sha256 "c9e04d20603246ffff6be7dc019319de5382bd9b13869df642afef73fe81c4c5"
   elsif OS.linux?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc_#{version}_linux_amd64.tar.gz"
-    sha256 "46d8faa8a88d9aa0e61317ee5752b7145f99e0ced5bb6645326d8e28d9cd2b63"
+    sha256 "dd468151ad17efb42e4fb499c01c973bc683d9f5614affca3ff6ca21c3a59a1c"
 end
 
   def install
