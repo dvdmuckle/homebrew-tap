@@ -1,5 +1,5 @@
 class Spc < Formula
-  version "0.7.0"
+  version "0.7.1"
   desc "A spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
 
@@ -7,10 +7,10 @@ class Spc < Formula
 
   if OS.mac?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-darwin-amd64.tar.gz"
-    sha256 "626d92c8ebf81cd5b1e89db8b074cdc67218ad93193e4b64cde0accf52cf5b67"
+    sha256 "8e1ae916d3cef60e0b13469e55a27d349f5ec9cdb4c4c6a0cced2bda3f8ad7f0"
   elsif OS.linux?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-linux-amd64.tar.gz"
-    sha256 "722e257c1f85208acd11816431d256429ce995a2baa80aceadf7e4ab44cdb238"
+    sha256 "236523cdc39bc42b7ed5581c5007e63e2993c50bbec6aa65946294f5d114cfe8"
 end
 
   def install
