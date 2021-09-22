@@ -22,6 +22,9 @@ end
     output = Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"spc", "completion", "zsh")
     (zsh_completion/"_spc").write output
 
+    system bin/"spc", "docs", "man", "man1"
+    man.install "man1"
+
 end
 
 end
