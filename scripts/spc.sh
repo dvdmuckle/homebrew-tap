@@ -37,8 +37,6 @@ class Spc < Formula
   desc "A spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
 
-  bottle :unneeded
-
   if OS.mac?
     url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-darwin-amd64.tar.gz"
     sha256 "${MAC_SHA}"

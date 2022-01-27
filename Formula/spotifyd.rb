@@ -3,8 +3,6 @@ class Spotifyd < Formula
   desc "A spotify daemon"
   homepage "https://github.com/Spotifyd/spotifyd"
 
-  bottle :unneeded
-
   if OS.mac?
     url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-macos-full.tar.gz"
     sha256 "d636f162a532e360d24f7e070d34eb59ca0554a94c0994c342506c915075dec6"
