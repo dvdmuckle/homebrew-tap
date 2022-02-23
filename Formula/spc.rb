@@ -15,7 +15,7 @@ class Spc < Formula
   if Hardware::CPU.arm?
     if OS.mac?
       url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-darwin-arm64.tar.gz"
-      sha256 "f2e69b06073de82b2b55d9ee4206b544a4ed299d6a532593f9af34ea3ef563c4"
+      sha256 "14eb8680efab7a907de0412ae0bfa6e62df20dd67c658d635256908d94134278"
     elsif OS.linux?
       url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-linux-arm64.tar.gz"
       sha256 "c3ea843d3ca5a55f710ecd3aec4670053545b295c9cb5585456c51810ddb423b"
