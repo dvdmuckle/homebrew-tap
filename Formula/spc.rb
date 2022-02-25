@@ -1,7 +1,7 @@
 class Spc < Formula
   desc "Spotify CLI"
-  version "1.1.1"
   homepage "https://github.com/dvdmuckle/spc"
+  version "1.1.1"
   url "https://github.com/dvdmuckle/spc/archive/#{version}.tar.gz"
   depends_on "go" => :build
   
