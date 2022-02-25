@@ -3,11 +3,11 @@ class Spc < Formula
   homepage "https://github.com/dvdmuckle/spc"
   url "https://github.com/dvdmuckle/spc/archive/#{version}.tar.gz"
   version "1.1.1"
-  depends_on "go" => :build
-
   bottle do
     root_url "https://ghcr.io/v2/dvdmuckle/tap"
   end
+  depends_on "go" => :build
+
   def install
     system "go", "build", "-o", "spc", "-ldflags", "-X github.com/dvdmuckle/spc/cmd.version=#{version}"
     bin.install "spc"
