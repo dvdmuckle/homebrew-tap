@@ -1,28 +1,21 @@
 class Spc < Formula
-  version "1.1.1"
-  desc "A spotify CLI"
+  desc "Spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
+  url "https://github.com/dvdmuckle/spc/archive/1.1.1.tar.gz"
+  sha256 "544f38874be3a902b0b5ab38593c3802acd469acad103ecb220d03eef6652f55"
 
-  if Hardware::CPU.intel?
-    if OS.mac?
-      url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-darwin-amd64.tar.gz"
-      sha256 "58ae3964ca15acb67162562ca65c8b86f06344457bcaeb076cbe27ae565851a6"
-    elsif OS.linux?
-      url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-linux-amd64.tar.gz"
-      sha256 "427b08adb22ca8fb46a54d7df599e1f558a5f4e6c9493a2bfb75a5a091e672f2"
-    end
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
-  if Hardware::CPU.arm?
-    if OS.mac?
-      url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-darwin-arm64.tar.gz"
-      sha256 "14eb8680efab7a907de0412ae0bfa6e62df20dd67c658d635256908d94134278"
-    elsif OS.linux?
-      url "https://github.com/dvdmuckle/spc/releases/download/#{version}/spc-#{version}-linux-arm64.tar.gz"
-      sha256 "c3ea843d3ca5a55f710ecd3aec4670053545b295c9cb5585456c51810ddb423b"
-    end
+
+  bottle do
+    root_url "https://ghcr.io/v2/dvdmuckle/tap"
   end
+  depends_on "go" => :build
 
   def install
+    system "go", "build", "-o", "spc", "-ldflags", "-X github.com/dvdmuckle/spc/cmd.version=#{version}"
     bin.install "spc"
 
     output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"spc", "completion", "bash")
@@ -33,6 +26,5 @@ class Spc < Formula
 
     system bin/"spc", "docs", "man", "man1"
     man.install "man1"
-end
-
+  end
 end
