@@ -1,10 +1,13 @@
 class Spc < Formula
+  desc "Spotify CLI"
   version "1.1.1"
-  desc "A spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
   url "https://github.com/dvdmuckle/spc/archive/#{version}.tar.gz"
   depends_on "go" => :build
-
+  
+  bottle do
+    root_url "https://ghcr.io/v2/dvdmuckle/tap"
+  end
   def install
     system "go", "build", "-o", "spc", "-ldflags", "-X github.com/dvdmuckle/spc/cmd.version=#{version}"
     bin.install "spc"
@@ -17,6 +20,5 @@ class Spc < Formula
 
     system bin/"spc", "docs", "man", "man1"
     man.install "man1"
-end
-
+  end
 end
