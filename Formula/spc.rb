@@ -2,6 +2,7 @@ class Spc < Formula
   desc "Spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
   url "https://github.com/dvdmuckle/spc/archive/1.1.1.tar.gz"
+  sha256 "544f38874be3a902b0b5ab38593c3802acd469acad103ecb220d03eef6652f55"
   version "1.1.1"
 
   livecheck do
