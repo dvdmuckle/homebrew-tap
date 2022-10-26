@@ -20,7 +20,7 @@ class Spc < Formula
     system "go", "build", "-o", "spc", "-ldflags", "-X github.com/dvdmuckle/spc/cmd.version=#{version}"
     bin.install "spc"
 
-    generate_completion_from_executable(bin/"spc", "completion")
+    generate_completions_from_executable(bin/"spc", "completion")
 
     system bin/"spc", "docs", "man", "man1"
     man.install "man1"
