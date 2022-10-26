@@ -1,8 +1,8 @@
 class Spc < Formula
   desc "Lightweight Spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
-  url "https://github.com/dvdmuckle/spc/archive/1.1.3.tar.gz"
-  sha256 "670b25a5a213a467b10b3fff9cb541e66f897155e8c655c2f0dbbf43f498c5d8"
+  url "https://github.com/dvdmuckle/spc/archive/1.1.4.tar.gz"
+  sha256 "07fe75be2953a5b143f82443ff29e16d1571b1a39411bc3e6cf1bdde8d573c66"
 
   livecheck do
     url :stable
@@ -20,11 +20,7 @@ class Spc < Formula
     system "go", "build", "-o", "spc", "-ldflags", "-X github.com/dvdmuckle/spc/cmd.version=#{version}"
     bin.install "spc"
 
-    output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"spc", "completion", "bash")
-    (bash_completion/"spc").write output
-
-    output = Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"spc", "completion", "zsh")
-    (zsh_completion/"_spc").write output
+    generate_completions_from_executable(bin/"spc", "completion")
 
     system bin/"spc", "docs", "man", "man1"
     man.install "man1"
