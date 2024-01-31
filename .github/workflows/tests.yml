@@ -36,7 +36,7 @@ jobs:
       - run: brew test-bot --only-formulae --root-url=https://ghcr.io/v2/dvdmuckle/tap
         if: github.event_name == 'pull_request'
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
