@@ -1,7 +1,7 @@
 class Spc < Formula
   desc "Lightweight Spotify CLI"
   homepage "https://github.com/dvdmuckle/spc"
-  url "https://github.com/dvdmuckle/spc/archive/1.2.0.tar.gz"
+  url "https://github.com/dvdmuckle/spc/archive/refs/tags/1.2.0.tar.gz"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   livecheck do
