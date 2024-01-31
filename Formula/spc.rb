@@ -11,9 +11,10 @@ class Spc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/dvdmuckle/tap"
-    sha256 cellar: :any_skip_relocation, ventura:      "3e46582499cb523969e8715d02dd1be4bb9ec7acaceea5e7ce534bee60e099d3"
-    sha256 cellar: :any_skip_relocation, monterey:     "16f478d5de174fcfae7afb58e55b7f60864e0feb3327f6d13ba2cd4c4d916465"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "faaa892366ab69dd4e8b7ea28bd8d2c8b145a79b0df57461514908aa05384402"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "595bff6b6e7064df096e38fb0b1b21cabcb6a258085bea3c4421737055ac403a"
+    sha256 cellar: :any_skip_relocation, ventura:      "da28c0b09c8fd41907815418963ad766da4d47200d45e434648ed027d6a95b9e"
+    sha256 cellar: :any_skip_relocation, monterey:     "0025fb19a2e1eacb4f4f661fe0bc2b3a1ed770f478ad65d7862240d6f6e2038f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "989ac51d7ac9ab59d5f73371a7be7040fb982c9a6c4f63ba7c7ee6d5c16339ca"
   end
   depends_on "go" => :build
 
