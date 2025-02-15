@@ -11,6 +11,7 @@ class Spc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/dvdmuckle/tap"
+    rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "6fbd8caea942d47a8a393f09176199dd0e3663a9a38c3bc4184e0186cffa278c"
     sha256 cellar: :any_skip_relocation, ventura:      "c87e80e0aa879fc1a3ee8c63e63fa5227e10cdf03bccefcdde5ad77b5e52b6a9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9f43e4e013ab261c918a0338e0ede748fe80a448374a4afdc0af2b8d9376b5d7"
