@@ -27,4 +27,8 @@ class Spc < Formula
     system bin/"spc", "docs", "man", "man1"
     man.install "man1"
   end
+
+  test do
+    assert_match "Usage:", shell_output("#{bin}/spc help")
+  end
 end
